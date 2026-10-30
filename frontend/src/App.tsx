@@ -1,16 +1,7 @@
 ﻿
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import {
-  Server,
-  Globe,
-  RefreshCw,
-  CheckCircle2,
-  Rocket,
-  GitBranch,
-  Container,
-  Cloud
-} from 'lucide-react'
+import { Server, Globe, RefreshCw, CheckCircle2 } from 'lucide-react'
 import './App.css'
 
 function App() {
@@ -41,59 +32,13 @@ function App() {
 
   return (
     <div className="container">
-      {/* Visible deployment demo banner */}
-      <section className="deployment-banner">
-        <div className="deployment-banner-top">
-          <div className="deployment-icon">
-            <Rocket size={28} />
-          </div>
 
-          <div className="deployment-heading">
-            <span className="deployment-eyebrow">
-              CONTINUOUS INTEGRATION & DELIVERY
-            </span>
-            <h2>NEW DEPLOYMENT RELEASE</h2>
-            <p>Code pushed. Pipeline triggered. Release in progress.</p>
-          </div>
-        </div>
-
-        <div className="deployment-version-row">
-          <span className="deployment-version">
-            DEMO VERSION 2.0
-          </span>
-          <span className="deployment-demo-id">
-            Release ID: CI-CD-002
-          </span>
-        </div>
-
-        <div className="deployment-flow">
-          <div className="deployment-step">
-            <GitBranch size={18} />
-            <span>GitHub</span>
-          </div>
-
-          <span className="flow-arrow">→</span>
-
-          <div className="deployment-step">
-            <Server size={18} />
-            <span>Jenkins</span>
-          </div>
-
-          <span className="flow-arrow">→</span>
-
-          <div className="deployment-step">
-            <Container size={18} />
-            <span>Docker</span>
-          </div>
-
-          <span className="flow-arrow">→</span>
-
-          <div className="deployment-step">
-            <Cloud size={18} />
-            <span>AWS EC2</span>
-          </div>
-        </div>
-      </section>
+      {/* CI/CD deployment demo banner */}
+      <div className="deployment-banner">
+        <span className="deployment-dot" />
+        <span>Automated CI/CD Deployment</span>
+        <span className="deployment-version">VERSION 2.0</span>
+      </div>
 
       <header className="header">
         <Server className="icon-main" size={48} />
@@ -127,8 +72,8 @@ function App() {
 
           {loading ? (
             <div className="skeleton-loader">
-              <div className="skeleton-text" />
-              <div className="skeleton-text short" />
+              <div className="skeleton-text"></div>
+              <div className="skeleton-text short"></div>
             </div>
           ) : error ? (
             <p className="error-text">{error}</p>
@@ -148,9 +93,7 @@ function App() {
 
       <footer className="footer">
         <p>Built with Django & React (Vite)</p>
-        <p className="footer-deployment">
-          Containerized with Docker · Automated using Jenkins CI/CD
-        </p>
+        <p>Deployed using Docker and Jenkins CI/CD</p>
       </footer>
     </div>
   )
