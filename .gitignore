@@ -8,3 +8,15 @@ __pycache__/
 venv/
 node_modules/
 dist/
+
+# Terraform local files and state
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+crash.log
+crash.*.log
+
+tfplan
+**/tfplan
